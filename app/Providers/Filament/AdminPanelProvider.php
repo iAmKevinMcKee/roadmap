@@ -32,7 +32,7 @@ class AdminPanelProvider extends PanelProvider
             ->databaseTransactions()
             ->registration()
             ->passwordReset()
-            ->profile(EditProfile::class)
+            ->profile(EditProfile::class, isSimple: false)
             ->emailVerification()
             ->emailChangeVerification()
             ->login()

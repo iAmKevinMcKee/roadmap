@@ -16,6 +16,7 @@ class FeaturesTable
         return $table
             ->columns([
                 TextColumn::make('name')
+                    ->sortable(false)
                     ->searchable(),
                 TextColumn::make('status')
                     ->sortable()
