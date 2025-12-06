@@ -97,7 +97,7 @@ class FilamentUiServiceProvider extends ServiceProvider
         });
 
         // make notifications last 10 seconds by default
-        \Filament\Notifications\Notification::configureUsing(function (Notification $notification) {
+        \Filament\Notifications\Notification::configureUsing(function (\Filament\Notifications\Notification $notification) {
             return $notification->duration(10000);
         });
 
