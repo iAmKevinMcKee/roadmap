@@ -50,7 +50,7 @@ class FeatureResource extends Resource
     {
         return [
             'index' => ListFeatures::route('/'),
-//            'create' => CreateFeature::route('/create'),
+            'create' => CreateFeature::route('/create'),
             'view' => ViewFeature::route('/{record}'),
         ];
     }

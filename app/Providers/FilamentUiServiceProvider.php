@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Filament\Actions\CreateAction;
+use Filament\Forms\Components\RichEditor;
 use Filament\Tables\Columns\Column;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
@@ -107,6 +108,15 @@ class FilamentUiServiceProvider extends ServiceProvider
                 ->defaultDateDisplayFormat('m/d/Y')
                 ->defaultDateTimeDisplayFormat('h:i A')
                 ->defaultTimeDisplayFormat('m/d/Y h:i A');
+        });
+
+        RichEditor::configureUsing(function (RichEditor $richEditor) {
+            return $richEditor
+                ->toolbarButtons([
+                    ['bold', 'italic', 'underline', 'strike', 'link'],
+                    ['h2', 'h3', 'alignStart', 'alignCenter', 'alignEnd'],
+                    ['blockquote', 'codeBlock', 'bulletList', 'orderedList'],
+                ]);
         });
     }
 }

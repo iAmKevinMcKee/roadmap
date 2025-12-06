@@ -28,7 +28,7 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
-            ->unsavedChangesAlerts()
+            ->unsavedChangesAlerts(fn () => app()->isProduction())
             ->databaseTransactions()
             ->strictAuthorization()
             ->registration()
