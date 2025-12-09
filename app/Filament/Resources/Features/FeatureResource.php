@@ -52,6 +52,7 @@ class FeatureResource extends Resource
             'index' => ListFeatures::route('/'),
             'create' => CreateFeature::route('/create'),
             'view' => ViewFeature::route('/{record}'),
+            'edit' => EditFeature::route('/{record}/edit'),
         ];
     }
 }

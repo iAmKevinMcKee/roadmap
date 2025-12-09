@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('status')->default(FeatureStatus::Proposed->value);
             $table->string('type')->default(FeatureType::Feature->value);
             $table->text('description');
+            $table->json('milestones')->nullable();
             $table->smallInteger('effort_in_days')->unsigned()->default(0);
             $table->smallInteger('priority')->unsigned()->default(0);
             $table->decimal('cost', 10, 2)->default(0.00);
