@@ -62,4 +62,16 @@ class User extends Authenticatable implements FilamentUser
     {
         return $this->hasMany(Vote::class);
     }
+
+    public function getInitialsAttribute(): string
+    {
+        $names = explode(' ', $this->name);
+        $initials = '';
+
+        foreach ($names as $name) {
+            $initials .= strtoupper($name[0]);
+        }
+
+        return $initials;
+    }
 }
