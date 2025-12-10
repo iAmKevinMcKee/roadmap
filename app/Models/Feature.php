@@ -19,4 +19,14 @@ class Feature extends Model
             'milestones' => 'array',
         ];
     }
+
+    public function comments(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+    public function votes(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Vote::class);
+    }
 }

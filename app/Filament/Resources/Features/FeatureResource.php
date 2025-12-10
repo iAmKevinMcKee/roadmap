@@ -6,6 +6,8 @@ use App\Filament\Resources\Features\Pages\CreateFeature;
 use App\Filament\Resources\Features\Pages\EditFeature;
 use App\Filament\Resources\Features\Pages\ListFeatures;
 use App\Filament\Resources\Features\Pages\ViewFeature;
+use App\Filament\Resources\Features\RelationManagers\CommentsRelationManager;
+use App\Filament\Resources\Features\RelationManagers\VotesRelationManager;
 use App\Filament\Resources\Features\Schemas\FeatureForm;
 use App\Filament\Resources\Features\Schemas\FeatureInfolist;
 use App\Filament\Resources\Features\Tables\FeaturesTable;
@@ -19,8 +21,9 @@ use Filament\Tables\Table;
 class FeatureResource extends Resource
 {
     protected static ?string $model = Feature::class;
+    protected static ?int $navigationSort = 1;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedStar;
 
     protected static ?string $recordTitleAttribute = 'name';
 
@@ -42,7 +45,8 @@ class FeatureResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            CommentsRelationManager::class,
+            VotesRelationManager::class,
         ];
     }
 
