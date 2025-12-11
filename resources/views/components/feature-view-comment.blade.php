@@ -12,6 +12,9 @@
                     @if($comment->user->is_admin)
                         <span class="px-2 py-0.5 text-[10px] font-medium rounded-full bg-violet-100 dark:bg-violet-500/10 text-violet-600 dark:text-violet-400">TEAM</span>
                     @endif
+                    @if(! $comment->is_approved)
+                        <span class="px-2 py-0.5 text-[10px] font-medium rounded-full bg-yellow-100 dark:bg-yellow-500/10 text-yellow-600 dark:text-yellow-400">PENDING APPROVAL</span>
+                    @endif
                 </div>
                 <span class="text-xs text-zinc-500 dark:text-zinc-400">{{ $comment->created_at->diffForHumans() }}</span>
             </div>
