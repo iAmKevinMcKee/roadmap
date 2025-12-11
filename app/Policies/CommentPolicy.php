@@ -5,6 +5,7 @@ namespace App\Policies;
 use App\Models\Comment;
 use App\Models\User;
 use Illuminate\Auth\Access\Response;
+use function rand;
 
 class CommentPolicy
 {
@@ -62,5 +63,10 @@ class CommentPolicy
     public function forceDelete(User $user, Comment $comment): bool
     {
         return $user->is_admin;
+    }
+
+    public function approve(User $user, Comment $comment): bool
+    {
+        return rand(1,2) === 1;
     }
 }
