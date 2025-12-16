@@ -23,6 +23,7 @@ class FeaturesTable
                     ->badge()
                     ->searchable(),
                 TextColumn::make('type')
+                    ->badge()
                     ->searchable(),
                 TextColumn::make('effort_in_days')
                     ->numeric()

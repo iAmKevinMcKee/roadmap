@@ -16,7 +16,10 @@ class ListFeatures extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            CreateAction::make(),
+            Action::make('import_from_clickup')
+                ->label('Import from ClickUp')
+                ->modalContent(view('import_table_view'))
+                ->modalSubmitAction(false),
         ];
     }
 }
